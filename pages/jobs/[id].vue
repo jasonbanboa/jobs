@@ -1,6 +1,7 @@
 <script setup>
 const nuxt = useNuxtApp();
 
+
 </script>
 
 

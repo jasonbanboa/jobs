@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --color-violet: #5964e0;
+  --color-light-violet: #939bf4;
+  --color-very-dark-blue: #19202d;
+  --color-midnight: #121721;
+  --color-white: #fff;
+  --color-light-grey: #f4f6f8;
+  --color-grey: #9daec2;
+  --color-dark-grey: #6e8098;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  color: var(--color-dark-grey);
+}
+
+#app {
+  min-height: 100vh;
+  background-color: var(--background-color-app);
+  overflow: auto;
+  transition: 0.2s linear;
+}
+
+#app.light {
+  --background-color-app: var(--color-light-grey);
+  --background-color-elements: var(--color-white);
+  --color-text: var(--color-very-dark-blue);
+  --color-btn-2: var(--color-violet);
+  
+}
+
+#app.dark {
+  --background-color-app: var(--color-midnight);
+  --background-color-elements: var(--color-very-dark-blue);
+  --color-text: var(--color-white);
+  --color-btn-2: var(--color-white);
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+  font-family: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
