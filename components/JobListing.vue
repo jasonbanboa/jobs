@@ -10,28 +10,29 @@ const toHoverColor = (hslColor :string) => {
 
 
 <template>
-  <a 
-  :href="`${job.id}`"
-  class="jobListing"
-  :style="`--hover-color: ${toHoverColor(job.logoBackground!)}`"
+  <div 
+    class="jobListing"
+    :style="`--hover-color: ${toHoverColor(job.logoBackground!)}`"
   >
-    <div 
-      class="logo" 
-      :style="`background-color: ${job.logoBackground};`"
-    >
-      <img :src="job.logo" :alt="job.company">
-    </div>
-    <div class="details">
-      <div class="flex">
-        <p>{{ job.postedAt }}</p>
-        <span>|</span>
-        <p>{{ job.contract }}</p>      
+    <NuxtLink :to="`/jobs/${job.id}`">
+      <div 
+        class="logo" 
+        :style="`background-color: ${job.logoBackground};`"
+      >
+        <img :src="job.logo" :alt="job.company">
       </div>
-      <h3>{{ job.position }}</h3>
-      <p>{{ job.company }}</p>
-      <h4>{{ job.location }}</h4>
-    </div>
-  </a>
+      <div class="details">
+        <div class="flex">
+          <p>{{ job.postedAt }}</p>
+          <span>|</span>
+          <p>{{ job.contract }}</p>      
+        </div>
+        <h3>{{ job.position }}</h3>
+        <p>{{ job.company }}</p>
+        <h4>{{ job.location }}</h4>
+      </div>
+    </NuxtLink>
+  </div>
 </template>
 
 <style scoped>
