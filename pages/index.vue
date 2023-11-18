@@ -8,7 +8,6 @@ const { data: jobs } = await useLazyFetch('/api/jobs');
   <main>
     <JobListing v-for="job in jobs"
      :href="`/jobs/${job.id}`"
-     class="jobApplication" 
      :job="job"
     />
     
@@ -19,7 +18,7 @@ const { data: jobs } = await useLazyFetch('/api/jobs');
 main {
   justify-content: center;
   display: grid;
-  grid-template-columns: repeat(3, 350px);
-  gap: 2rem;
+  grid-template-columns: repeat(3, 420px);
+  gap: 4rem;
 }
 </style>
