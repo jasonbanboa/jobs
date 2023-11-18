@@ -19,7 +19,7 @@ const toHoverColor = (hslColor :string) => {
       class="logo" 
       :style="`background-color: ${job.logoBackground};`"
     >
-      <img :src="`${job.logo}`" :alt="`${job.company}`">
+      <img :src="job.logo" :alt="job.company">
     </div>
     <div class="details">
       <div class="flex">
@@ -34,7 +34,7 @@ const toHoverColor = (hslColor :string) => {
   </a>
 </template>
 
-<style>
+<style scoped>
 .logo {
   position: absolute;
   top: 0;
