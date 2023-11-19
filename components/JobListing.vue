@@ -1,5 +1,7 @@
 <script setup lang="ts">
-defineProps<{job: Partial<JobPosting>}>();
+const { job } = defineProps<{
+  job: Omit<JobPosting, 'website' | 'apply' | 'description' | 'requirements' | 'role'>
+}>();
 
 const toHoverColor = (hslColor :string) => {
   const hslValues = hslColor.match(/[0-9]+%?/g);
@@ -12,15 +14,10 @@ const toHoverColor = (hslColor :string) => {
 <template>
   <div 
     class="jobListing"
-    :style="`--hover-color: ${toHoverColor(job.logoBackground!)}`"
+    :style="`--hover-color: ${toHoverColor(job.logoBackground)}`"
   >
     <NuxtLink :to="`/jobs/${job.id}`">
-      <div 
-        class="logo" 
-        :style="`background-color: ${job.logoBackground};`"
-      >
-        <img :src="job.logo" :alt="job.company">
-      </div>
+      <CompanyLogo class="logo" :job="job" />
       <div class="details">
         <div class="flex">
           <p>{{ job.postedAt }}</p>

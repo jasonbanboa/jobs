@@ -1,12 +1,9 @@
 <script setup>
-const nuxt = useNuxtApp();
-
-
+const route = useRoute();
+const { data: job } = await useFetch(`/api/jobs/${route.params.id}`);
 </script>
 
 
 <template>
-  <div>
-    {{ $route.params.id }}
-  </div>
+  <JobDetailsHeader :job="job" />
 </template>
