@@ -75,7 +75,7 @@ img {
 
 h3 {
   font-size: 1.5rem;
-  color: var(--color-very-dark-blue);
+  color: var(--color-text);
   position: relative;
 }
 

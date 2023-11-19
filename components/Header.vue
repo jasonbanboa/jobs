@@ -1,7 +1,9 @@
 <template>
   <header>
     <div class="container">
-      <img src="~/assets/svgs/logo.svg" alt="logo">
+      <nuxt-link to="/">
+        <img src="~/assets/svgs/logo.svg" alt="logo">
+      </nuxt-link>
       <div class="toggleContainer">
         <img src="~/assets/svgs/icon-sun.svg" alt="light theme">
         <div class="toggle">

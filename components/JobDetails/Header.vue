@@ -54,4 +54,19 @@ defineProps<{
   line-height: 1.6;
   color: var(--color-very-dark-blue);
 }
+
+a {
+  background-color: var(--color-very-light-violet);
+  color: var(--color-violet);
+  border-radius: 10px;
+  padding: 20px 40px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: all .25s;
+}
+
+a:hover {
+  background-color: var(--color-light-violet);
+  color: #fff;
+}
 </style>
