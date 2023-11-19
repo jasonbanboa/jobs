@@ -6,7 +6,7 @@
       </nuxt-link>
       <div class="toggleContainer">
         <img src="~/assets/svgs/icon-sun.svg" alt="light theme">
-        <div class="toggle">
+        <div class="toggle" @click="toggleTheme">
           <div class="switch"></div>
         </div>
         <img src="~/assets/svgs/icon-moon.svg" alt="dark theme">
@@ -40,6 +40,11 @@
   height:22px;
   border-radius: 50%;
   background-color: var(--color-violet);
+  transition: all .25s;
+}
+
+#app.dark .switch {
+  transform: translate(25px);
 }
 
 .toggleContainer img {

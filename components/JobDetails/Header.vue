@@ -52,7 +52,7 @@ defineProps<{
 .companyDetails h4 {
   font-size: 1.75rem;
   line-height: 1.6;
-  color: var(--color-very-dark-blue);
+  color: var(--color-text);
 }
 
 a {
