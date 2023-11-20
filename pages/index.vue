@@ -1,6 +1,4 @@
 <script setup>
-import { useFilter } from '~/composables/filter';
-
 const { data: jobs } = await useLazyFetch('/api/jobs');
 const filter = useFilter();
 
