@@ -40,7 +40,7 @@ body {
   --background-color-elements: var(--color-white);
   --color-text: var(--color-very-dark-blue);
   --color-btn-2: var(--color-violet);
-  
+  --color-border-sperator: #ddd;
 }
 
 #app.dark {
@@ -48,6 +48,7 @@ body {
   --background-color-elements: var(--color-very-dark-blue);
   --color-text: var(--color-white);
   --color-btn-2: var(--color-white);
+  --color-border-sperator: var(--color-dark-grey);
 }
 
 button,

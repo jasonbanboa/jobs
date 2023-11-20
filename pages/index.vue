@@ -1,16 +1,46 @@
 <script setup>
+import { useFilter } from '~/composables/filter';
+
 const { data: jobs } = await useLazyFetch('/api/jobs');
+const filter = useFilter();
+
+const filteredJobs = computed(() => {
+
+  const filtered = {
+    value: jobs.value,
+  };
+
+  if (filter.value.byContract) {
+    filtered.value = filtered.value.filter(({ contract }) => contract === 'Full Time');
+  }
+
+  if (filter.value.byLocation) {
+    filtered.value = filtered.value.filter(({ location }) => location.toLowerCase().includes(filter.value.byLocation));
+  }
+
+  if (filter.value.byTitleOrCompany) {
+    filtered.value = filtered.value.filter(({ position, company }) => 
+      position.toLowerCase().includes(filter.value.byTitleOrCompany) 
+      || company.toLowerCase().includes(filter.value.byTitleOrCompany)
+    );
+  }
+
+  return filtered.value;
+});
 
 </script>
 
 
 <template>
+  <Filter />
+  <div>
+    {{ filter }}
+  </div>
   <main class="container">
-    <JobListing v-for="job in jobs"
+    <JobListing v-for="job in filteredJobs"
      :href="`/jobs/${job.id}`"
      :job="job"
     />
-    
   </main>
 </template>
 
@@ -19,7 +49,7 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 420px);
   justify-content: center;
-  padding: 12rem 0rem 6rem;
+  padding: 6rem 0rem;
   gap: 4rem;
 }
 </style>

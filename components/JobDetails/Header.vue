@@ -37,7 +37,7 @@ defineProps<{
   border-bottom-right-radius: 0px;
 }
 
-.logo::v-deep img {
+.logo:deep(img) {
   width: 100px;
 }
 
