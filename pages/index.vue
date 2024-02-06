@@ -31,9 +31,6 @@ const filteredJobs = computed(() => {
 
 <template>
   <Filter />
-  <div>
-    {{ filter }}
-  </div>
   <main class="container">
     <JobListing v-for="job in filteredJobs"
      :href="`/jobs/${job.id}`"
@@ -50,4 +47,26 @@ main {
   padding: 6rem 0rem;
   gap: 4rem;
 }
+@media (max-width: 1420px) {
+  main.container {
+    padding: 6rem 2rem;
+    grid-template-columns: repeat(2, 420px);
+  }
+}
+
+@media (max-width: 950px) {
+  main.container {
+    padding: 6rem 2rem; 
+    grid-template-columns: repeat(1, 420px);
+  }
+}
+
+
+@media (max-width: 400px) {
+  main.container {
+    padding: 6rem 2rem; 
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 </style>

@@ -59,4 +59,9 @@ header {
   background-size: cover;
   height: 190px;
 }
+@media (max-width: 1420px) {
+  header {padding: 1rem;}
+}
+
+
 </style>

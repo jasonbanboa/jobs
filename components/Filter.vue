@@ -31,14 +31,16 @@ const search = () => {
         <input type="checkbox" id="contract" v-model="byContract">
         Full Time Only
       </label>
-      <button class="search" @click="search">Search</button>
+      <button class="pc search" @click="search">Search</button>
     </div>
+    <button class="mobile search" @click="search">Search</button>
   </section>
 </template>
 
 <style scoped>
 
 section {
+  width: 100%;
   display: flex;
   border-radius: 10px;
   background-color: var(--background-color-elements);
@@ -82,5 +84,26 @@ input {
 .search:hover {
   background-color: var(--color-light-violet);
   color: #fff;
+}
+
+.mobile {display: none; justify-content: center;}
+
+@media (max-width: 950px) {
+  section.container {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+  }
+
+  section.container .contract label {
+    margin-right: auto;
+  }
+   .pc {
+    display: none;
+  }
+  .fieldset:not(:has(+button)) {
+    border-bottom: 1px solid #ccc;
+  }
+  .mobile {display: flex;}
 }
 </style>
